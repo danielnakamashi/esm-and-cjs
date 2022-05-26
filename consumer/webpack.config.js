@@ -8,9 +8,12 @@ module.exports = {
     filename: "index.js",
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".js", ".mjs"],
   },
   module: {
-    rules: [{ test: /\.ts$/, loader: "ts-loader" }],
+    rules: [
+      { test: /\.ts$/, loader: "ts-loader" },
+      { test: /\.m?js/, type: "javascript/auto" },
+    ],
   },
 };
